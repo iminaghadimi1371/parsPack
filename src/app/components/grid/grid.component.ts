@@ -31,7 +31,6 @@ export class GridComponent implements OnInit, OnDestroy {
   private simpleSearchPipe: SimpleSearchPipe;
 
 
-
   private querySubscription: Subscription = new Subscription();
 
 
@@ -45,7 +44,6 @@ export class GridComponent implements OnInit, OnDestroy {
     this.getData();
     this.querySubscription.add(this.gridActionsNotifier.ListenOn('simpleSearch').subscribe(res => {
         this.searchText = res.toString();
-        this.currentPage = 1;
         this.calcPageCount();
       }
     ));
@@ -86,6 +84,7 @@ export class GridComponent implements OnInit, OnDestroy {
   }
 
   public calcPageCount(): void {
+    this.currentPage = 1;
     let rowLength = this.rows.length;
     if (this.grid.searchBy && this.searchText) rowLength = this.simpleSearchPipe.transform(this.rows, this.grid.searchBy, this.searchText).length
     const numbers = Math.ceil(rowLength / this.pageSize);

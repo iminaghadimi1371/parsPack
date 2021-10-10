@@ -43,7 +43,7 @@
 <!--pagination-->
 <div class="d-flex flex-row justify-content-between align-items-center">
   <div class="page-counter flex-grow-1">
-    <ng-select [(ngModel)]="pageSize" (click)="calcPageCount()" [clearable]="false" [searchable]="false">
+    <ng-select [(ngModel)]="pageSize" (change)="calcPageCount()" [clearable]="false" [searchable]="false">
       <ng-option *ngFor="let page of pageSizes" [value]="page">{{page}}</ng-option>
     </ng-select>
   </div>
