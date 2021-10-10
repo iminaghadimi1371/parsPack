@@ -19,8 +19,8 @@ body {
 }
 
 //ant-modal-end
-//pagination
 
+//pagination
 .page-item {
   .page-link {
     background-color: $color-1;
@@ -105,11 +105,6 @@ body {
     color: $color-2 !important;
     font-size: 13px;
     letter-spacing: 0;
-
-    .second-level-color {
-      color: rgb(255, 255, 255, 0.8) !important;
-      font-weight: normal;
-    }
   }
 }
 
@@ -119,4 +114,29 @@ body {
 
 .table > :not(:first-child) {
   border-top: 1px solid $color-3;
+}
+.text-column {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+//map
+.map-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 80px;
+}
+
+.map-frame {
+  border: 2px solid $color-3;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
 }

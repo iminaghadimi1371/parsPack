@@ -6,7 +6,6 @@ import * as L from 'leaflet';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements AfterViewInit {
   @Input() user: UserModel;
