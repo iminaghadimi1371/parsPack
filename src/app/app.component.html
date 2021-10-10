@@ -1,0 +1,18 @@
+<div class="container mt-5">
+  <div class="row mb-3">
+    <div class="col-3">
+      <app-simple-search *ngIf="userGrid.searchBy" [grid]="userGrid" [searchOfGrid]="searchOfGrid"></app-simple-search>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-grid [grid]="userGrid"></app-grid>
+    </div>
+  </div>
+</div>
+
+<nz-modal [(nzVisible)]="isVisible" [nzTitle]="user?.name + ' '+user?.username" (nzOnCancel)="handleCancel()"
+          [nzWidth]="width" [nzFooter]="[]">
+  <app-map *ngIf="isVisible" [user]="user"></app-map>
+</nz-modal>
+

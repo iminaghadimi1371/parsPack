@@ -1,0 +1,26 @@
+<ng-container *ngFor="let tHead of theadLabel;let index=index">
+  <!--start :thead-->
+  <li [ngStyle]="{'width':tHeadCustomWith[index]['customWidth'] + '%'}">
+    <div (click)="onSortClick(index)"
+         #sortingList>
+      <div class="title-header">
+        {{tHead}}
+        <ng-container *ngTemplateOutlet="sortingIcon;
+                      context:{index:index,sortableStatus:this.theadSortConfig[index]['sortable'],
+                      sortColumnValue:this.theadSortConfig[index]['value']}"></ng-container>
+      </div>
+    </div>
+  </li>
+  <!--end :thead-->
+</ng-container>
+
+<!--start:sort icon template-->
+<ng-template #sortingIcon let-sortableStatus="sortableStatus" let-sortColumnValue="sortColumnValue">
+  <ng-container *ngIf="sortableStatus!==false">
+    <span class="filter-box">
+      <i class="filter-icon fal fa-sort-alt"></i>
+    </span>
+  </ng-container>
+</ng-template>
+<!--end:sort icon template-->
+

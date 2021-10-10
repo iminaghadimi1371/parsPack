@@ -1,0 +1,12 @@
+<div class="{{'text-'+row.position}} action-column">
+  <ng-container *ngIf="row.buttonItems">
+         <span *ngFor="let action of row.buttonItems">
+             <button (click)="action.onclick(column)"
+                     [ngClass]="action.customClass"
+                     class="btn shadow-none p-0">
+              <i *ngIf="action.icon" [ngClass]="action.icon"></i>
+              <span *ngIf="action.name"> {{action.name}}</span>
+              </button>
+        </span>
+  </ng-container>
+</div>
